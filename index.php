@@ -31,7 +31,7 @@
         $postsModel = new Posts("localhost", "root", "", "blog");
         switch ($todo) {
             case "home":
-                header("Location: index.php");
+                include_once "home.php";
                 break;
             case "list":
                 include_once "postlist.php";
@@ -40,9 +40,9 @@
                 include_once "newpost.php";
                 break;
             case "add":
-                $name = htmlspecialchars($_POST["name"]);
-                $title = htmlspecialchars($_POST["title"]);
-                $content = htmlspecialchars($_POST["content"]);
+                $name = trim(htmlspecialchars($_POST["name"])) ?? '';
+                $title = trim(htmlspecialchars($_POST["title"])) ?? '';
+                $content = trim(htmlspecialchars($_POST["content"])) ?? '';
                 $postsModel->addPost($name, $title, $content);
                 header("Location: index.php");
                 break;

@@ -23,11 +23,13 @@ class Posts
         return $posts;
     }
 
-    function sortAsc($posts){;
+    function sortAsc($posts)
+    {;
         return $posts;
     }
 
-    function sortDesc($posts){
+    function sortDesc($posts)
+    {
         $posts = array_reverse($posts);
         return $posts;
     }
@@ -53,9 +55,18 @@ class Posts
     function flagPost($id, $reason)
     {
         $select = "SELECT * FROM blogs WHERE id = '$id'";
-        $update = "UPDATE blogs SET reported = CONCAT(reported, '[$reason]') WHERE id = '$id'";
+        $update = "UPDATE blogs SET reported =
+        CASE 
+            WHEN reported IS NULL OR reported = '' THEN '[$reason]'
+            ELSE CONCAT(reported, ',[$reason]')
+        END 
+        WHERE id = '$id'";
         $this->conn->query($update);
         $result = $this->conn->query($select);
+        $row = $this->conn->query("SELECT reported FROM blogs WHERE id = $id")->fetch_assoc();
+        if (substr_count($row['reported'], '[') >= 3) {
+            $this->conn->query("DELETE FROM blogs WHERE id = $id");  ////////////////////// gets removed after 3 reports
+        }
         $posts = [];
         while ($row = $result->fetch_object()) {
             $posts[] = new Post($row->id, $row->name, $row->title, $row->content, $row->created_at);
