@@ -9,11 +9,11 @@
   </div>
     <div class="mb-3">
     <label for="title" class="form-label">Content</label>
-    <input type="title" class="form-control" id="content" name="content">
+    <textarea name="content" id="content" class="form-control"></textarea>
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="completed" name="completed">
-    <label class="form-check-label" for="completed">Kész</label>
+    <input type="checkbox" class="form-check-input" id="tos" name="tos">
+    <label class="form-check-label" for="tos">I have read and accepted <div class="hover">the terms and conditions<span class="hovertext">just check it bro</span></div></label>
   </div>
   <button type="submit" class="btn btn-primary">Felvesz</button>
 </form>

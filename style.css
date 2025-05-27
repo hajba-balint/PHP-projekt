@@ -1,0 +1,21 @@
+.hover{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.hover .hovertext{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.hover:hover .hovertext {
+  visibility: visible;
+}

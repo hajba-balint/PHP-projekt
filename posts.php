@@ -10,14 +10,20 @@
         }
     }
 
-    function getTasks() {
-        $sql = "SELECT * FROM tasks";
+    function getPosts() {
+        $sql = "SELECT * FROM blogs";
         $result = $this->conn->query($sql);
         $posts = [];
         while ($row = $result->fetch_object()) {
             $posts[] = new Post($row->id, $row->name, $row->title, $row->content, $row->created_at);
         }
         return $posts;
+    }
+
+    function addPost($name, $title, $content) {
+        $created_at = date('m/d/Y h:i:s a', time());
+        $sql = "INSERT INTO blogs (name, title, content, created_at) VALUES ('$name', '$title', '$content', '$created_at')";
+        $this->conn->query($sql);
     }
     }
 ?>
