@@ -7,10 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Blog</h1>
     <div class="container">
-        <?php 
-            
+        <h1>Blog</h1>
+        <?php
+            include_once "posts.php";
+            $todo = $_GET['todo'] ?? 'list';
+            $tasksModel = new Posts("localhost", "root", "", "blog");
+            switch($todo){
+                case "list":
+                    include_once "postlist.php";
+                    break;
+            }
         ?>
     </div>
 </body>
