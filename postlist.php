@@ -1,13 +1,22 @@
-<?php
-include_once "posts.php";
-$postsModel = new Posts("localhost", "root", "", "blog");
-$posts = $postsModel->getPosts();
-echo "
-    <h2 class='my-3'>All posts</h2>
-    <div class='row'>
-    ";
-foreach ($posts as $post) {
-    echo "
+<div class='row'>
+    <?php
+    include_once "posts.php";
+    $postsModel = new Posts("localhost", "root", "", "blog");
+    $order = $_GET['order'] ?? 'desc';
+    if ($order == "asc") {
+        $posts = $postsModel->sortAsc($postsModel->getPosts());
+    } else {
+        $posts = $postsModel->sortDesc($postsModel->getPosts());
+    }
+    ?>
+    <div class="header-row">
+        <h2 class='my-3'>All posts</h2>
+        <a class="sort" href="?todo=list&order=asc" <?php if ($order == "asc"){echo "style='display: none;'";}?>>&#8613;</a>
+        <a class="sort" href="?todo=list&order=desc" <?php if ($order == "desc"){echo "style='display: none;'";}?>>&#x21a7;</a>
+    </div>
+    <?php
+    foreach ($posts as $post) {
+        echo "
         <div class='col-sm-4'>
             <div class='card'>
                 <div class='card-body'>
@@ -19,7 +28,6 @@ foreach ($posts as $post) {
             </div>
         </div>
     ";
-}
-echo "</div>"
-
-?>
+    }
+    ?>
+</div>

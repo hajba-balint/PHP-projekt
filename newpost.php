@@ -13,7 +13,7 @@
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="tos" name="tos">
-    <label class="form-check-label" for="tos">I have read and accepted the <div class="hover">terms and conditions<span class="hovertext">just check it bro</span></div></label>
+    <label class="form-check-label" for="tos">I have read and accepted the <div class="hover">terms and conditions<span class="hovertext">now you can check it</span></div></label>
   </div>
   <button type="submit" class="btn btn-primary">Add post</button>
 </form>

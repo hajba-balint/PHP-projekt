@@ -1,0 +1,14 @@
+CREATE TABLE blog.blogs (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  title varchar(255) NOT NULL,
+  content varchar(255) NOT NULL,
+  created_at varchar(255) NOT NULL,
+  reported varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+)
+ENGINE = INNODB,
+AUTO_INCREMENT = 13,
+AVG_ROW_LENGTH = 3276,
+CHARACTER SET utf8mb4,
+COLLATE utf8mb4_general_ci;

@@ -23,6 +23,15 @@ class Posts
         return $posts;
     }
 
+    function sortAsc($posts){;
+        return $posts;
+    }
+
+    function sortDesc($posts){
+        $posts = array_reverse($posts);
+        return $posts;
+    }
+
     function addPost($name, $title, $content)
     {
         $created_at = date('m/d/Y h:i:s a', time());
