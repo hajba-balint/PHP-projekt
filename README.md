@@ -1,2 +1,2 @@
 # PHP-projekt
-Bejelentkezéses bejegyzésíró weboldal
+Bejegyzésíró weboldal
