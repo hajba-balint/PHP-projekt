@@ -19,3 +19,33 @@
 .hover:hover .hovertext {
   visibility: visible;
 }
+
+#brand{
+    padding: 20px !important;
+}
+
+.date{
+    float: right; 
+    font-size: 18px;
+}
+
+.title{
+    margin-top: 20px;
+}
+
+.content{
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.report{
+    float: right;
+}
+
+#reason{
+    width: 420px !important;
+}
+
+form{
+    margin-top: 30px;
+}

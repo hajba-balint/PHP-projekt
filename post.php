@@ -1,5 +1,5 @@
 <?php
     class Post{
-        function __construct(private $id, private $name, private $title, private $content, private $created_at){}
+        function __construct(public $id, public $name, public $title, public $content, public $created_at){}
     }
 ?>
