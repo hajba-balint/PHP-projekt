@@ -8,5 +8,5 @@
         <p>Let's get started!</p>
         <a class="btn btn-primary" href="?todo=list">All Posts</a>
         <a class="btn btn-primary" href="?todo=new">Create a Post</a>
-    </div>
+</div>
 </div>
