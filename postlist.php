@@ -9,7 +9,7 @@
     }
 ?>
     <div class="header-d-flex flex-column align-items-center text-center my-3">
-        <h2 class='my-3 text-center' <?php if (empty($posts)){echo "style='display: none;'";}?>>All posts (<?php echo count($posts) ?>)</h2>
+        <h1 class='my-3 text-center' <?php if (empty($posts)){echo "style='display: none;'";}?>>All posts (<?php echo count($posts) ?>)</h1>
         <a class="sort" href="?todo=list&order=asc" <?php if ($order == "asc" || count($posts) < 2){echo "style='display: none;'";}//////?>>Sort:  &#8613;</a>
         <a class="sort" href="?todo=list&order=desc" <?php if ($order == "desc" || count($posts) < 2){echo "style='display: none;'";} ///  no way to sort if there are less than 2 posts ?>> Sort:  &#x21a7;</a>
     </div>

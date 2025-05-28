@@ -1,4 +1,4 @@
-<h2 class='my-3 text-center'>Report post</h2>
+<h1 class='my-3 text-center'>Report post</h1>
 <div class='row'>
     <?php
     include_once "posts.php";

@@ -1,8 +1,10 @@
-.hover{
+.hover {
     display: inline-block;
+    color: rgb(87, 100, 170);
+    cursor: pointer;
 }
 
-.hover .hovertext{
+.hover .hovertext {
     visibility: hidden;
     width: 170px;
     text-align: center;
@@ -10,56 +12,81 @@
     border: 1px solid rgb(170, 170, 170);
     border-radius: 20px;
     position: absolute;
+    color: black;
 }
 
 .hover:hover .hovertext {
-  visibility: visible;
+    visibility: visible;
 }
 
-#brand{
+#brand {
     padding: 10px;
+    width: 100px;
 }
 
-.date{
-    float: right; 
+.date {
+    float: right;
     font-size: 12px;
 }
 
-.title{
+.title {
     margin-top: 20px;
 }
 
-.content{
+.content {
     margin: 5px;
     margin-top: 20px;
 }
 
-.report{
+.report {
     float: right;
 }
 
-#reason{
+#reason {
     width: 420px !important;
 }
 
-form{
-    margin-top: 30px;
+form {
+    margin-top: 20px;
 }
 
-.col-sm-6{
+.col-sm-6 {
     margin: auto;
     margin-bottom: 25px;
     height: 100%;
 }
 
-.sort{
+.sort {
     font-size: 30px;
     color: black;
     text-decoration: none;
 }
 
 .header-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+#add{
+    width: 100px;
+    margin: 20px;
+    margin-top: 0;
+}
+
+#name{
+    max-width: 250px;
+}
+
+#title{
+    max-width: 350px;
+}
+
+#content{
+    height: 115px;
+    resize: none;
 }

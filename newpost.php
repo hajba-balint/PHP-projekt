@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
-<h2 class='my-3 text-center'>New Post</h2>
+<h1 class='my-3 text-center'>New Post</h1>
 <div class='row'>
   <div class='col-sm-6'>
     <div class='card'>
@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="tos" name="tos" required>
-            <label class="form-check-label" for="tos">I have read and accepted the <div class="hover">terms and conditions<span class="hovertext">now you can check it</span></div></label>
+            <label class="form-check-label" for="tos">I have read and accepted the <span class="hover">terms and conditions<span class="hovertext">now you can check it</span></div></label>
           </div>
-          <button type="submit" class="btn btn-primary">Add post</button>
+          <button type="submit" class="btn btn-primary"  id="add">Add post</button>
         </form>
       </div>
     </div>

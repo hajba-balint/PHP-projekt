@@ -54,7 +54,7 @@ class Posts
 
     function flagPost($id, $reason)
     {
-        $select = "SELECT * FROM blogs WHERE id = '$id'";
+        $select = "SELECT * FROM blogs WHERE id = '$id' AND visibility = true";
         $update = "UPDATE blogs SET reports =
         CASE 
             WHEN reports IS NULL OR reports = '' THEN '[$reason]'
