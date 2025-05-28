@@ -16,7 +16,7 @@
                     <form method='POST' action='?todo=flag&id=$id'>
                         <div class='mb-3'>
                             <label for='reason' class='form-label'>Reason</label>
-                            <input type='text' class='form-control' id='reason' name='reason' required>
+                            <input type='text' class='form-control' id='reason' name='reason' maxlength='40' required>
                         </div>
                         <button type='submit' class='btn btn-primary'>Send report</button>
                     </form>

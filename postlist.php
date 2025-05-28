@@ -40,6 +40,9 @@
             </div>
         ";
         }
-        echo "</div>";                 ////
+        echo "</div>";                 ///
+        if(count($posts) > 6){
+            echo "<a class='arrow' href='#top'><img src='arrow.png' alt='To the top' class='arrow'></a>"; // go to the top of the page button if there are more than 6 posts
+        }
     }
 ?>

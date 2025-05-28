@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <a id="top"></a>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
         <a class="navbar-brand" href=""><img src="blog.png" alt="Blog" id="brand"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
