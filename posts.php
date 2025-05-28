@@ -14,7 +14,7 @@ class Posts
 
     function getPosts()
     {
-        $sql = "SELECT * FROM blogs";
+        $sql = "SELECT * FROM blogs WHERE visibility = true";
         $result = $this->conn->query($sql);
         $posts = [];
         while ($row = $result->fetch_object()) {
@@ -55,17 +55,17 @@ class Posts
     function flagPost($id, $reason)
     {
         $select = "SELECT * FROM blogs WHERE id = '$id'";
-        $update = "UPDATE blogs SET reported =
+        $update = "UPDATE blogs SET reports =
         CASE 
-            WHEN reported IS NULL OR reported = '' THEN '[$reason]'
-            ELSE CONCAT(reported, ',[$reason]')
+            WHEN reports IS NULL OR reports = '' THEN '[$reason]'
+            ELSE CONCAT(reports, ',[$reason]')
         END 
         WHERE id = '$id'";
         $this->conn->query($update);
         $result = $this->conn->query($select);
-        $row = $this->conn->query("SELECT reported FROM blogs WHERE id = $id")->fetch_assoc();
-        if (substr_count($row['reported'], '[') >= 3) {
-            $this->conn->query("DELETE FROM blogs WHERE id = $id");  ////////////////////// gets removed after 3 reports
+        $row = $this->conn->query("SELECT reports FROM blogs WHERE id = $id")->fetch_assoc();
+        if (substr_count($row['reports'], '[') >= 3) {
+            $this->conn->query("UPDATE blogs SET visibility = false WHERE id = $id");  //////// made invisible after 3 reports
         }
         $posts = [];
         while ($row = $result->fetch_object()) {
@@ -73,4 +73,21 @@ class Posts
         }
         return $posts;
     }
+
+    function reportsById($id)
+    {
+        $sql = "SELECT reports FROM blogs WHERE id = '$id'";
+        $result = $this->conn->query($sql);
+        $cleanReports = [];
+        while ($row = $result->fetch_object()) {
+            if($row->reports == null){
+                return [];
+            }
+            $rawReports = explode(",", $row->reports);
+            foreach ($rawReports as $report) {
+                $cleanReports[] = trim($report, "[]");
+            }
+        return $cleanReports;
+    }
+}
 }

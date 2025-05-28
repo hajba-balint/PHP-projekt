@@ -1,7 +1,5 @@
 .hover{
-    position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
 }
 
 .hover .hovertext{
@@ -10,10 +8,8 @@
     text-align: center;
     margin-left: 5px;
     border: 1px solid rgb(170, 170, 170);
-    border-radius: 6px;
-    padding: 5px 0;
+    border-radius: 20px;
     position: absolute;
-    z-index: 1;
 }
 
 .hover:hover .hovertext {
@@ -21,12 +17,12 @@
 }
 
 #brand{
-    padding: 20px !important;
+    padding: 10px;
 }
 
 .date{
     float: right; 
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .title{
@@ -50,19 +46,20 @@ form{
     margin-top: 30px;
 }
 
-.card{
+.col-sm-6{
+    margin: auto;
     margin-bottom: 25px;
+    height: 100%;
+}
+
+.sort{
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
 }
 
 .header-row {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
-.sort{
-    float: left;
-    font-size: 30px;
-    color: black;
-    text-decoration: none;
 }

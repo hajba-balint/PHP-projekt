@@ -5,10 +5,11 @@ CREATE TABLE blog.blogs (
   content varchar(255) NOT NULL,
   created_at varchar(255) NOT NULL,
   reported varchar(255) DEFAULT NULL,
+  visibility tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (id)
 )
 ENGINE = INNODB,
-AUTO_INCREMENT = 13,
-AVG_ROW_LENGTH = 3276,
+AUTO_INCREMENT = 33,
+AVG_ROW_LENGTH = 8192,
 CHARACTER SET utf8mb4,
 COLLATE utf8mb4_general_ci;
